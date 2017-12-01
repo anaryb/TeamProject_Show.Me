@@ -22,7 +22,7 @@ namespace TeamProject_ShowMe
     {
         public MainWindow()
         {
-            InitializeComponent();
+            InitializeComponent();//
             int p = 0;
             //
             //hello
