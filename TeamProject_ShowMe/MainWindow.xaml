@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
     <Grid>
-        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Height="74" Margin="161,101,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="212"><Run Text="Hello My friend!"/><LineBreak/><Run Text="We are working at ShowMe application :)"/><LineBreak/><Run/></TextBlock>
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Height="74" Margin="161,101,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="212"><Run Text="Hello My friend!"/><LineBreak/><Run Text="We are working at ShowMe application :)"/><LineBreak/><Run Text="hello my world!"/><LineBreak/><Run Text="kjhlkjhjkhljkhljkhljkh"/><LineBreak/><Run/></TextBlock>
 
     </Grid>
 </Window>
