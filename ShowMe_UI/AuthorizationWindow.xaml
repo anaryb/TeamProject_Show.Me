@@ -1,0 +1,30 @@
+﻿<Window x:Class="ShowMe_UI.AuthorizationWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ShowMe_UI"
+        mc:Ignorable="d"
+        Title="Authorization" Height="300" Width="300">
+    <Grid>
+        <Grid.RowDefinitions>
+            
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Margin="10" TextAlignment="Center"  VerticalAlignment="Center" FontSize="20" Grid.Row="0" Grid.Column="0" >Login</TextBlock>
+        <TextBlock Margin="10" TextAlignment="Center"  VerticalAlignment="Center" FontSize="20" Grid.Row="1" Grid.Column="0" >Password</TextBlock>
+
+        <TextBox x:Name="textboxAuthLogin" Margin="10" VerticalAlignment="Center" Grid.Column="1" Grid.Row="0"></TextBox>
+        <TextBox x:Name="textboxAuthPassword" Margin="10" VerticalAlignment="Center" Grid.Column="1" Grid.Row="1"></TextBox>
+
+        <Button x:Name="buttonAuthorisation" Margin="10" VerticalAlignment="Center" Grid.Row="3" Grid.Column="1" Content="Authorisation" FontSize="20"></Button>
+
+    </Grid>
+</Window>
