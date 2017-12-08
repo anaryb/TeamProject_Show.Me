@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TeamProject_ShowMe
 {
-    public class Movie : ShowCentre
+    public class Movie : MediaCentre
     {
         List<Movie> Movies = new List<Movie>();
         public DateTime Duration;//

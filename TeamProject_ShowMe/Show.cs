@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TeamProject_ShowMe
 {
-    public class Show:ShowCentre
+    public class Show:MediaCentre
     {
         public int Season { get; set; }
         public int Episode { get; set; }
@@ -14,7 +14,7 @@ namespace TeamProject_ShowMe
             base(Id, Name, Year, Raiting, Discription)
         {
             this.Season = Season;
-            this.Episode = Episode;
+            this.Episode = Episode;//
         }
 
 

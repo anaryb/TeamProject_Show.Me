@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TeamProject_ShowMe
 {
-    public abstract class ShowCentre
+    public class MediaCentre
     {
         public int Id { get; set; }
 
@@ -18,7 +18,7 @@ namespace TeamProject_ShowMe
 
         public double Raiting { get; set; }
 
-        public ShowCentre(int Id, string Name, DateTime Year, double Raiting, string Discription)
+        public MediaCentre(int Id, string Name, DateTime Year, double Raiting, string Discription)
         {
             this.Id = Id;
             this.Name = Name;
