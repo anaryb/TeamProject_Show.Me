@@ -24,5 +24,10 @@ namespace ShowMe_UI
         {
             InitializeComponent();
         }
+
+        private void buttonToRegWin_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

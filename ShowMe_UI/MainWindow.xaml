@@ -21,7 +21,7 @@
         </Grid>
         <TextBlock Grid.Row="1" Grid.ColumnSpan="2" FontSize="20">Welcome to the ShowMe Media Center!</TextBlock>
 
-        <Button x:Name="buttonToRegWin" Grid.Row="2" Margin="10,50" Content="Registration" FontSize="20"></Button>
+        <Button x:Name="buttonToRegWin" Grid.Row="2" Margin="10,50" Content="Registration" FontSize="20" Click="buttonToRegWin_Click"></Button>
         <Button x:Name="buttonToAuthWin" Grid.Row="2" Grid.Column="1" Margin="10,50" Content="Authorisation" FontSize="20"></Button>
         
     </Grid>

@@ -14,7 +14,7 @@ namespace TeamProject_ShowMe
             base(Id, Name, Year, Raiting, Discription)
         {
             this.Season = Season;
-            this.Episode = Episode;//
+            this.Episode = Episode;
         }
 
 
