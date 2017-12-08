@@ -15,7 +15,7 @@ namespace TeamProject_ShowMe
         {
             this.Name = Name;
             this.Id = Id;
-            this.Password = Password;
+            this.Password = Password;//
         }
     }
 }
