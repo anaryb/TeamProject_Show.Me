@@ -1,0 +1,26 @@
+﻿<Page x:Class="ShowMe_UI.ShowCollectionPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ShowMe_UI"
+      mc:Ignorable="d" 
+      d:DesignHeight="500" d:DesignWidth="600"
+      Title="Show Collection" Background="White">
+
+    <Grid>
+        <ListView Name="ShowCollectionList" Margin="5" Background="LightBlue">
+            <ListView.View>
+                <GridView>
+                    <GridView.Columns>
+                        <GridViewColumn Header="Show Name" Width="Auto"  DisplayMemberBinding="{Binding Path=Name}"></GridViewColumn>
+                        <GridViewColumn Header="Year" Width="50"  DisplayMemberBinding="{Binding Path=Year}"></GridViewColumn>
+                        <GridViewColumn Header="Description" Width="100" DisplayMemberBinding="{Binding Path=Description}"></GridViewColumn>
+                        <GridViewColumn Header="Rating" Width="100"  DisplayMemberBinding="{Binding Path=Rating}"></GridViewColumn>
+                    </GridView.Columns>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        
+    </Grid>
+</Page>

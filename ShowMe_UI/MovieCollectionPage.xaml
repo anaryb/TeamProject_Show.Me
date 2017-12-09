@@ -1,0 +1,42 @@
+﻿<Page x:Class="ShowMe_UI.MovieCollectionPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ShowMe_UI"
+      mc:Ignorable="d" 
+      d:DesignHeight="500" d:DesignWidth="600"
+      Title="Movies Collection">
+    <!--<Page.Resources>
+        <DataTemplate x:Key="MoviesDataTemplate">
+            <Border Margin="5" BorderThickness="1" BorderBrush="SteelBlue" CornerRadius="4" Width="370">
+                <Grid Margin="3">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Image Grid.RowSpan="2" Width="100" Height="75" Margin="6"
+                           Source="{Binding Path=ImageMovie, Converter={StaticResource ImageConverter}}"/>
+                    <StackPanel Grid.Column="1" Margin="2,6">
+                        <TextBlock FontWeight="Bold" Text="{Binding Path=ModelName, Converter={StaticResource StringUpperConverter}}"/>
+                        <TextBlock Text="{Binding ModelNumber}"/>
+                    </StackPanel>
+                </Grid>
+            </Border>
+        </DataTemplate>
+    </Page.Resources>-->
+    <Grid Background="White">
+        <ListView Name="MovieCollectionList" Margin="5" Background="LightBlue">
+            <ListView.View>
+                <GridView>
+                    <GridView.Columns>
+                        <GridViewColumn Header="Movie Name" Width="50"  DisplayMemberBinding="{Binding Path=Name}"></GridViewColumn>
+                        <GridViewColumn Header="Year" Width="50"  DisplayMemberBinding="{Binding Path=Year}"></GridViewColumn>
+                        <GridViewColumn Header="Description" Width="100" DisplayMemberBinding="{Binding Path=Description}"></GridViewColumn>
+                        <GridViewColumn Header="Rating" Width="100"  DisplayMemberBinding="{Binding Path=Rating}"></GridViewColumn>
+                    </GridView.Columns>
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </Grid>
+</Page>

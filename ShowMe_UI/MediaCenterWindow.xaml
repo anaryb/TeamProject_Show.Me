@@ -1,0 +1,41 @@
+﻿<Window x:Class="ShowMe_UI.MediaCenterWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ShowMe_UI"
+        mc:Ignorable="d"
+        Title="Media Center" Height="500" Width="600">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Margin="5" HorizontalAlignment="Left" Orientation="Horizontal">
+            <Button x:Name="buttonMovieColl" Margin="2,0,0,0" Padding="2" HorizontalAlignment="Center" 
+            VerticalAlignment="Center" Width="100" Foreground="#00000000" BorderBrush="#00707070" Click="buttonMovieColl_Click">
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                        <GradientStop Color="#00F3F3F3"/>
+                        <GradientStop Color="#00EBEBEB" Offset="0.5"/>
+                        <GradientStop Color="#00DDDDDD" Offset="0.16"/>
+                        <GradientStop Color="#00CDCDCD" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+                <StackPanel Orientation="Horizontal">
+                    
+                    <Image  Source="ShowMe_UI/Pictures/Kino.jpg"/>
+                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="Black">Movie</TextBlock>
+                </StackPanel>
+            </Button>
+            <Button x:Name="buttonShowColl" Margin="2,0,0,0" Padding="2" HorizontalAlignment="Center" 
+            VerticalAlignment="Center" Width="100" BorderBrush="#00707070" Foreground="#00000000" Background="#00000000" Click="buttonShowColl_Click">
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="ShowMe_UI/Pictures/serial.png"/>
+                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="Black">TV Show</TextBlock>
+                </StackPanel>
+            </Button>
+        </StackPanel>
+        <Frame x:Name="frameMediaCenter" Margin="1" Grid.Row="1" NavigationUIVisibility="Hidden"></Frame>
+    </Grid>
+</Window>
