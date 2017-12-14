@@ -64,6 +64,10 @@
     </ApplicationDefinition>
     <Compile Include="Episode\EpisodeRepository.cs" />
     <Compile Include="Episode\IEpisodeRepository.cs" />
+    <Compile Include="Migrations\201712141637394_Addepisode.cs" />
+    <Compile Include="Migrations\201712141637394_Addepisode.Designer.cs">
+      <DependentUpon>201712141637394_Addepisode.cs</DependentUpon>
+    </Compile>
     <Compile Include="Movie\IMovieRepository.cs" />
     <Compile Include="Movie\MovieRepository.cs" />
     <Compile Include="Episode\Episode.cs" />
@@ -107,6 +111,9 @@
     </Compile>
     <EmbeddedResource Include="Migrations\201712140036360_Initial.resx">
       <DependentUpon>201712140036360_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201712141637394_Addepisode.resx">
+      <DependentUpon>201712141637394_Addepisode.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
