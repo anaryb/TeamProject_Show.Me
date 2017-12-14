@@ -57,7 +57,6 @@
     </ApplicationDefinition>
     <Compile Include="Movie.cs" />
     <Compile Include="Show.cs" />
-    <Compile Include="MediaCentre.cs" />
     <Compile Include="User.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
