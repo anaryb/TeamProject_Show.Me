@@ -9,7 +9,8 @@
       Title="Show Collection" Background="White">
 
     <Grid>
-        <ListView Name="ShowCollectionList" Margin="5" Background="LightBlue">
+        <ScrollViewer Grid.ColumnSpan="4">
+            <ListView Name="ShowCollectionList" Margin="5" Background="LightBlue">
             <ListView.View>
                 <GridView>
                     <GridView.Columns>
@@ -20,7 +21,8 @@
                     </GridView.Columns>
                 </GridView>
             </ListView.View>
-        </ListView>
+             </ListView>
+        </ScrollViewer>
         
     </Grid>
 </Page>

@@ -26,17 +26,19 @@
         </DataTemplate>
     </Page.Resources>-->
     <Grid Background="White">
-        <ListView Name="MovieCollectionList" Margin="5" Background="LightBlue">
-            <ListView.View>
-                <GridView>
-                    <GridView.Columns>
-                        <GridViewColumn Header="Movie Name" Width="50"  DisplayMemberBinding="{Binding Path=Name}"></GridViewColumn>
-                        <GridViewColumn Header="Year" Width="50"  DisplayMemberBinding="{Binding Path=Year}"></GridViewColumn>
-                        <GridViewColumn Header="Description" Width="100" DisplayMemberBinding="{Binding Path=Description}"></GridViewColumn>
-                        <GridViewColumn Header="Rating" Width="100"  DisplayMemberBinding="{Binding Path=Rating}"></GridViewColumn>
-                    </GridView.Columns>
-                </GridView>
-            </ListView.View>
-        </ListView>
+        <ScrollViewer Grid.ColumnSpan="4">
+            <ListView Name="MovieCollectionList" Margin="5" Background="LightBlue">
+                <ListView.View>
+                    <GridView>
+                        <GridView.Columns>
+                            <GridViewColumn Header="Movie Name" Width="50"  DisplayMemberBinding="{Binding Path=Name}"></GridViewColumn>
+                            <GridViewColumn Header="Year" Width="50"  DisplayMemberBinding="{Binding Path=Year}"></GridViewColumn>
+                            <GridViewColumn Header="Description" Width="100" DisplayMemberBinding="{Binding Path=Description}"></GridViewColumn>
+                            <GridViewColumn Header="Rating" Width="100"  DisplayMemberBinding="{Binding Path=Rating}"></GridViewColumn>
+                        </GridView.Columns>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </ScrollViewer>
     </Grid>
 </Page>

@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,6 +15,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+
+
 namespace ShowMe_UI
 {
     /// <summary>
@@ -23,6 +27,14 @@ namespace ShowMe_UI
         public MovieCollectionPage()
         {
             InitializeComponent();
+            using (TeamProject_ShowMe.MediaCenterContext db = new TeamProject_ShowMe.MediaCenterContext())
+            {
+                db.MovieRepository.Load();
+                MovieCollectionList.ItemsSource = db.MovieRepository.Movies;
+
+            }
+            
+            
         }
     }
 }

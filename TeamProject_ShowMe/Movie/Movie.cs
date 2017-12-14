@@ -4,20 +4,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TeamProject_ShowMe
+namespace TeamProject_ShowMe.Movie
 {
-    public class Movie 
+    public class Movie
     {
-
         public int Id { get; set; }
 
         public string Name { get; set; }
 
         public DateTime Year { get; set; }
 
-        public double Raiting { get; set; }
+        public double Rating { get; set; }
 
-        public DateTime Duration { get; set; }
+        public string Description { get; set; }
 
+        public override string ToString()
+        {
+            return Id.ToString() + Name;
+        }
     }
 }

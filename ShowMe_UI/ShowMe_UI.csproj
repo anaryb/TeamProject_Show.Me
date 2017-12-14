@@ -142,6 +142,12 @@
     <Resource Include="Pictures\Kino.png" />
     <Resource Include="Pictures\Serial.png" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TeamProject_ShowMe\TeamProject_ShowMe.csproj">
+      <Project>{d69520dd-0dcc-4204-ace9-d1d0b11f4740}</Project>
+      <Name>TeamProject_ShowMe</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

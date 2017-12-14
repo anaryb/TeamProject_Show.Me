@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TeamProject_ShowMe
+namespace TeamProject_ShowMe.Show
 {
     public class Show
     {
@@ -14,11 +14,9 @@ namespace TeamProject_ShowMe
 
         public DateTime Year { get; set; }
 
-        public double Raiting { get; set; }
+        public double Rating { get; set; }
 
-        public int Season { get; set; }
-
-        public int Episode { get; set; }
+        public string Description { get; set; }
 
     }
 }

@@ -62,14 +62,21 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Episode\EpisodeRepository.cs" />
+    <Compile Include="Episode\IEpisodeRepository.cs" />
+    <Compile Include="Movie\IMovieRepository.cs" />
+    <Compile Include="Movie\MovieRepository.cs" />
+    <Compile Include="Episode\Episode.cs" />
     <Compile Include="MediaCenterContext.cs" />
     <Compile Include="Migrations\201712140036360_Initial.cs" />
     <Compile Include="Migrations\201712140036360_Initial.Designer.cs">
       <DependentUpon>201712140036360_Initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Movie.cs" />
-    <Compile Include="Show.cs" />
+    <Compile Include="Movie\Movie.cs" />
+    <Compile Include="Show\IShowRepository.cs" />
+    <Compile Include="Show\Show.cs" />
+    <Compile Include="Show\ShowRepository.cs" />
     <Compile Include="User.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
