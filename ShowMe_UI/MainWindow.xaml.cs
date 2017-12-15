@@ -27,7 +27,8 @@ namespace ShowMe_UI
 
         private void buttonToRegWin_Click(object sender, RoutedEventArgs e)
         {
-
+            var w = new RegistrationWindow(this);
+            w.Show();
         }
     }
 }

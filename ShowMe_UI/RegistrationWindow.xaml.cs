@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,6 +12,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using TeamProject_ShowMe;
+using TeamProject_ShowMe.User;
 
 namespace ShowMe_UI
 {
@@ -19,9 +22,64 @@ namespace ShowMe_UI
     /// </summary>
     public partial class RegistrationWindow : Window
     {
-        public RegistrationWindow()
+        MainWindow MW { get; set; }
+        MediaCenterContext context = new MediaCenterContext();
+        
+
+        
+
+        public RegistrationWindow(MainWindow mw)
         {
             InitializeComponent();
         }
+
+        private void buttonRegistration_Click(object sender, RoutedEventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(textboxRegName.Text))
+            {
+                MessageBox.Show("Input Your Name, Please");
+                textboxRegName.Focus();
+                return;
+            }
+            if (string.IsNullOrWhiteSpace(textboxRegLogin.Text))
+            {
+                MessageBox.Show("Input Your Login, Please");
+                textboxRegLogin.Focus();
+                return;
+            }
+            if (passwordboxRegPassword.Password == "")
+            {
+                MessageBox.Show("Please, enter password!");
+            }
+
+            if (passwordboxRepeatRegPassword.Password == "")
+            {
+                MessageBox.Show("Please, repeat password!");
+            }
+
+            if (passwordboxRegPassword.Password != passwordboxRepeatRegPassword.Password)
+            {
+                MessageBox.Show("Passwords are not the same! \n Reenter, please");
+                
+            }
+            using (MediaCenterContext db = new MediaCenterContext())
+            {
+                var u = new User();
+                u.UserName = textboxRegName.Text;
+                u.UserLogin = textboxRegLogin.Text;
+                u.UserPassword = passwordboxRepeatRegPassword.Password;
+
+                db.UserRepository.AddUser(u);
+                context.SaveChanges();
+                context.Users.Load();
+
+            }
+
+
+        }
+
+
+
+
     }
 }

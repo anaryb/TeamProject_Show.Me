@@ -23,15 +23,15 @@
                     </LinearGradientBrush>
                 </Button.Background>
                 <StackPanel Orientation="Horizontal">
-                    
-                    <Image  Source="ShowMe_UI/Pictures/Kino.jpg"/>
+
+                    <!--<Image  Source="ShowMe_UI\Pictures\Kino.png"/>-->
                     <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="Black">Movie</TextBlock>
                 </StackPanel>
             </Button>
             <Button x:Name="buttonShowColl" Margin="2,0,0,0" Padding="2" HorizontalAlignment="Center" 
             VerticalAlignment="Center" Width="100" BorderBrush="#00707070" Foreground="#00000000" Background="#00000000" Click="buttonShowColl_Click">
                 <StackPanel Orientation="Horizontal">
-                    <Image Source="ShowMe_UI/Pictures/serial.png"/>
+                    <!--<Image Source="ShowMe_UI/Pictures/serial.png"/>-->
                     <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="Black">TV Show</TextBlock>
                 </StackPanel>
             </Button>
