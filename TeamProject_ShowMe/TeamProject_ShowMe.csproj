@@ -36,11 +36,11 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
@@ -66,19 +66,15 @@
     </ApplicationDefinition>
     <Compile Include="Episode\EpisodeRepository.cs" />
     <Compile Include="Episode\IEpisodeRepository.cs" />
-    <Compile Include="Migrations\201712141637394_Addepisode.cs" />
-    <Compile Include="Migrations\201712141637394_Addepisode.Designer.cs">
-      <DependentUpon>201712141637394_Addepisode.cs</DependentUpon>
+    <Compile Include="Migrations\201712152030587_Initial.cs" />
+    <Compile Include="Migrations\201712152030587_Initial.Designer.cs">
+      <DependentUpon>201712152030587_Initial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Movie\IMovieRepository.cs" />
     <Compile Include="Movie\MovieRepository.cs" />
     <Compile Include="Episode\Episode.cs" />
     <Compile Include="MediaCenterContext.cs" />
-    <Compile Include="Migrations\201712140036360_Initial.cs" />
-    <Compile Include="Migrations\201712140036360_Initial.Designer.cs">
-      <DependentUpon>201712140036360_Initial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Movie\Movie.cs" />
     <Compile Include="Show\IShowRepository.cs" />
     <Compile Include="Show\Show.cs" />
@@ -113,11 +109,8 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <EmbeddedResource Include="Migrations\201712140036360_Initial.resx">
-      <DependentUpon>201712140036360_Initial.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201712141637394_Addepisode.resx">
-      <DependentUpon>201712141637394_Addepisode.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201712152030587_Initial.resx">
+      <DependentUpon>201712152030587_Initial.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -20,7 +20,8 @@ namespace ShowMe_UI
     /// </summary>
     public partial class MediaCenterWindow : Window
     {
-        public MediaCenterWindow()
+        AuthorizationWindow AW  { get; set; }
+        public MediaCenterWindow(AuthorizationWindow au)
         {
             InitializeComponent();
         }

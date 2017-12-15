@@ -62,18 +62,37 @@ namespace ShowMe_UI
                 MessageBox.Show("Passwords are not the same! \n Reenter, please");
                 
             }
-            using (MediaCenterContext db = new MediaCenterContext())
+            foreach (var ru in context.Users)
             {
-                var u = new User();
-                u.UserName = textboxRegName.Text;
-                u.UserLogin = textboxRegLogin.Text;
-                u.UserPassword = passwordboxRepeatRegPassword.Password;
-
-                db.UserRepository.AddUser(u);
-                context.SaveChanges();
-                context.Users.Load();
-
+                if (textboxRegLogin.Text == ru.UserLogin)
+                {
+                    MessageBox.Show("Such login is already exsists");
+                    textboxRegLogin.Focus();
+                    return;
+                }
+                    
             }
+
+
+            var u = new User();
+            u.UserName = textboxRegName.Text;
+            u.UserLogin = textboxRegLogin.Text;
+            var hash = context.UserRepository.CalculateHash(passwordboxRepeatRegPassword.Password);
+            u.UserPassword = hash;
+
+            context.UserRepository.AddUser(u);
+            context.SaveChanges();
+
+            this.Close();
+
+            MessageBox.Show("Registration succsessfull! \n Please authorise in app!");
+
+
+
+
+
+
+
 
 
         }

@@ -22,13 +22,8 @@ namespace TeamProject_ShowMe
     {
         public MainWindow()
         {
-            InitializeComponent();//try
-            int p = 0;
-            //
-            //hello
-            //its me
-            //i cant do it
-            // privi
+            InitializeComponent();
+
              
         }
     }

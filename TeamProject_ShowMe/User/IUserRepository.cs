@@ -12,6 +12,7 @@ namespace TeamProject_ShowMe.User
 
         void AddUser(User user);
         void Load(User user);
+        string CalculateHash(string p);
 
     }
 }

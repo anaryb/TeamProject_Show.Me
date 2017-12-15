@@ -24,7 +24,7 @@
         <TextBox x:Name="textboxAuthLogin" Margin="10" VerticalAlignment="Center" Grid.Column="1" Grid.Row="0"></TextBox>
         <PasswordBox x:Name="passwordboxAuthPassword" Margin="10" VerticalAlignment="Center" Grid.Column="1" Grid.Row="1"></PasswordBox>
 
-        <Button x:Name="buttonAuthorisation" Margin="10" VerticalAlignment="Center" Grid.Row="3" Grid.Column="1" Content="Authorisation" FontSize="20"></Button>
+        <Button x:Name="buttonAuthorisation" Margin="10" VerticalAlignment="Center" Grid.Row="3" Grid.Column="1" Content="Authorisation" FontSize="20" Click="buttonAuthorisation_Click"></Button>
 
     </Grid>
 </Window>

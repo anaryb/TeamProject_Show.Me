@@ -24,7 +24,7 @@ namespace TeamProject_ShowMe
         public IEpisodeRepository EpisodeRepository { get; private set; }
         public IUserRepository  UserRepository { get; private set; }
 
-        public MediaCenterContext() : base("localsql")
+        public MediaCenterContext() : base("MC_SQL")
         {
             MovieRepository = new MovieRepository(this);
             ShowRepository = new ShowRepository(this);

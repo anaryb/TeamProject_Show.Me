@@ -30,5 +30,12 @@ namespace ShowMe_UI
             var w = new RegistrationWindow(this);
             w.Show();
         }
+
+        private void buttonToAuthWin_Click(object sender, RoutedEventArgs e)
+        {
+            var w = new AuthorizationWindow(this);
+            w.Show();
+
+        }
     }
 }
