@@ -16,6 +16,6 @@ namespace TeamProject_ShowMe.Episode
         
         public int Season { get; set; }
 
-        //duration
+        //duration...
     }
 }
