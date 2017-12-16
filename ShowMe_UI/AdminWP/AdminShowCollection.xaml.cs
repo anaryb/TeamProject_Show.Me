@@ -16,21 +16,25 @@ using System.Windows.Shapes;
 namespace ShowMe_UI
 {
     /// <summary>
-    /// Логика взаимодействия для ShowCollectionPage.xaml
+    /// Логика взаимодействия для AdminShowCollection.xaml
     /// </summary>
-    public partial class ShowCollectionPage : Page
+    public partial class AdminShowCollection : Page
     {
-        public ShowCollectionPage()
+        public AdminShowCollection()
         {
             InitializeComponent();
             using (TeamProject_ShowMe.MediaCenterContext db = new TeamProject_ShowMe.MediaCenterContext())
             {
                 db.ShowRepository.Load();
-                ShowCollectionList.ItemsSource = db.ShowRepository.Shows;
+                adminShowList.ItemsSource = db.ShowRepository.Shows;
 
             }
         }
 
-
+        private void AddNewShowAdmin_Click(object sender, RoutedEventArgs e)
+        {
+            var w = new AddNewShowWindow(this);
+            w.Show();
+        }
     }
 }

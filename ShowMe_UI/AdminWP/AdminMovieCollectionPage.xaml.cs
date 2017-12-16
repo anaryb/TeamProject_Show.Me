@@ -16,21 +16,25 @@ using System.Windows.Shapes;
 namespace ShowMe_UI
 {
     /// <summary>
-    /// Логика взаимодействия для ShowCollectionPage.xaml
+    /// Логика взаимодействия для AdminMovieCollectionPage.xaml
     /// </summary>
-    public partial class ShowCollectionPage : Page
+    public partial class AdminMovieCollectionPage : Page
     {
-        public ShowCollectionPage()
+        public AdminMovieCollectionPage()
         {
             InitializeComponent();
             using (TeamProject_ShowMe.MediaCenterContext db = new TeamProject_ShowMe.MediaCenterContext())
             {
-                db.ShowRepository.Load();
-                ShowCollectionList.ItemsSource = db.ShowRepository.Shows;
+                db.MovieRepository.Load();
+                adminMoviesList.ItemsSource = db.MovieRepository.Movies;
 
             }
         }
 
-
+        private void AddNewMovieAdmin_Click(object sender, RoutedEventArgs e)
+        {
+            var w = new ShowMe_UI.AddNewMovieWindow(this);
+            w.Show();
+        }
     }
 }

@@ -34,6 +34,7 @@ namespace ShowMe_UI
         private void buttonToAuthWin_Click(object sender, RoutedEventArgs e)
         {
             var w = new AuthorizationWindow(this);
+            this.Close();
             w.Show();
 
         }

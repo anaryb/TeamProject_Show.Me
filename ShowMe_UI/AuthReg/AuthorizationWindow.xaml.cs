@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ShowMe_UI;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -43,23 +44,34 @@ namespace ShowMe_UI
             {
                 MessageBox.Show("Please, enter password!");
             }
+
+            const string adminpassword = "admin12345";
+            var adminhash = context.UserRepository.CalculateHash(adminpassword);
+
             foreach (var au in context.Users)
             {
+                if ((textboxAuthLogin.Text == "admin") && (context.UserRepository.CalculateHash(passwordboxAuthPassword.Password) == adminhash))
+                {
+                    MessageBox.Show("Admin Authorisation successful");
+                    var w = new AdminMediaCentreWindow(this);
+                    w.Show();
+                    i = 1;
+                    this.Close();
+                    break;
+
+                }
                 if ((textboxAuthLogin.Text == au.UserLogin) && (context.UserRepository.CalculateHash(passwordboxAuthPassword.Password)== au.UserPassword))
                 {
                     MessageBox.Show("Authorisation successful");
                     var w = new MediaCenterWindow(this);
                     w.Show();
+                    this.Close();
                     i = 1;
                     
                 }
             }
             if (i ==0)
                 MessageBox.Show("Wrong login or password");
-
-
-
-
 
         }
     }

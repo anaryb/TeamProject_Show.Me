@@ -10,7 +10,7 @@
 
     <Grid>
         <ScrollViewer Grid.ColumnSpan="4">
-            <ListView Name="ShowCollectionList" Margin="5" Background="LightBlue" MouseDoubleClick="ShowCollectionList_MouseDoubleClick" >
+            <ListView Name="ShowCollectionList" Margin="5" Background="LightBlue" >
             <ListView.View>
                 <GridView>
                     <GridView.Columns>

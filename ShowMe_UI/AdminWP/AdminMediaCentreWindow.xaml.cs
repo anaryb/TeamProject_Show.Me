@@ -10,47 +10,44 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 using System.Windows.Navigation;
+using System.Windows.Shapes;
 
 namespace ShowMe_UI
 {
     /// <summary>
-    /// Логика взаимодействия для MediaCenterWindow.xaml
+    /// Логика взаимодействия для AdminMediaCentreWindow.xaml
     /// </summary>
-    public partial class MediaCenterWindow : Window
+    public partial class AdminMediaCentreWindow : Window
     {
-        AuthorizationWindow AW  { get; set; }
-        public MediaCenterWindow(AuthorizationWindow au)
+        AuthorizationWindow AW { get; set; }
+
+        public AdminMediaCentreWindow(AuthorizationWindow aw)
         {
             InitializeComponent();
             NavigationService nav;
             nav = NavigationService.GetNavigationService(this);
-            MovieCollectionPage mcp = new MovieCollectionPage();
+            AdminMovieCollectionPage mcp = new AdminMovieCollectionPage();
             //nav.Navigate(mcp);
-            frameMediaCenter.Navigate(mcp);
+            frameMediaCenterAdmin.Navigate(mcp);
         }
 
-        private void buttonMovieColl_Click(object sender, RoutedEventArgs e)
+        private void buttonMovieCollAdmin_Click(object sender, RoutedEventArgs e)
         {
             NavigationService nav;
             nav = NavigationService.GetNavigationService(this);
-            MovieCollectionPage mcp = new MovieCollectionPage();
+            AdminMovieCollectionPage mcp = new AdminMovieCollectionPage();
             //nav.Navigate(mcp);
-            frameMediaCenter.Navigate(mcp);
-
-
+            frameMediaCenterAdmin.Navigate(mcp);
         }
 
-        private void buttonShowColl_Click(object sender, RoutedEventArgs e)
+        private void buttonShowCollAdmin_Click(object sender, RoutedEventArgs e)
         {
             NavigationService nav;
             nav = NavigationService.GetNavigationService(this);
-            ShowCollectionPage scp = new ShowCollectionPage();
+            AdminShowCollection scp = new AdminShowCollection();
             //nav.Navigate(mcp);
-            frameMediaCenter.Navigate(scp);
+            frameMediaCenterAdmin.Navigate(scp);
         }
-
-
     }
 }

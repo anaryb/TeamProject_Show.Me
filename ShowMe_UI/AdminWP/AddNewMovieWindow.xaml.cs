@@ -10,27 +10,20 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace ShowMe_UI
 {
     /// <summary>
-    /// Логика взаимодействия для ShowCollectionPage.xaml
+    /// Логика взаимодействия для AddNewMovieWindow.xaml
     /// </summary>
-    public partial class ShowCollectionPage : Page
+    public partial class AddNewMovieWindow : Window
     {
-        public ShowCollectionPage()
+        AdminMovieCollectionPage AMC { get; set; }
+
+        public AddNewMovieWindow(AdminMovieCollectionPage amc)
         {
             InitializeComponent();
-            using (TeamProject_ShowMe.MediaCenterContext db = new TeamProject_ShowMe.MediaCenterContext())
-            {
-                db.ShowRepository.Load();
-                ShowCollectionList.ItemsSource = db.ShowRepository.Shows;
-
-            }
         }
-
-
     }
 }

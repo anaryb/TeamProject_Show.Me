@@ -64,7 +64,22 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="AuthorizationWindow.xaml.cs">
+    <Compile Include="AdminWP\AddNewShowWindow.xaml.cs">
+      <DependentUpon>AddNewShowWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AdminWP\AddNewMovieWindow.xaml.cs">
+      <DependentUpon>AddNewMovieWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AdminWP\AdminMediaCentreWindow.xaml.cs">
+      <DependentUpon>AdminMediaCentreWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AdminWP\AdminMovieCollectionPage.xaml.cs">
+      <DependentUpon>AdminMovieCollectionPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AdminWP\AdminShowCollection.xaml.cs">
+      <DependentUpon>AdminShowCollection.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AuthReg\AuthorizationWindow.xaml.cs">
       <DependentUpon>AuthorizationWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="MediaCenterWindow.xaml.cs">
@@ -73,13 +88,33 @@
     <Compile Include="MovieCollectionPage.xaml.cs">
       <DependentUpon>MovieCollectionPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="RegistrationWindow.xaml.cs">
+    <Compile Include="AuthReg\RegistrationWindow.xaml.cs">
       <DependentUpon>RegistrationWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="ShowCollectionPage.xaml.cs">
       <DependentUpon>ShowCollectionPage.xaml</DependentUpon>
     </Compile>
-    <Page Include="AuthorizationWindow.xaml">
+    <Page Include="AdminWP\AddNewShowWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AdminWP\AddNewMovieWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AdminWP\AdminMediaCentreWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AdminWP\AdminMovieCollectionPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AdminWP\AdminShowCollection.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AuthReg\AuthorizationWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -103,7 +138,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="RegistrationWindow.xaml">
+    <Page Include="AuthReg\RegistrationWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
