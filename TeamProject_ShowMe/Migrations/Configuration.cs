@@ -31,9 +31,14 @@ namespace TeamProject_ShowMe.Migrations
             new Episode.Episode{  Name="02", Season=1, Show = shows[1]},
             new Episode.Episode{ Name="03", Season=3, Show = shows[2]}
             };
+            Movie.Movie[] movies =
+            {
+                new Movie.Movie {Name ="101 Dalmatinez", Year = new DateTime(1998,12,30), Description="hello", Rating=4.5},
+                new Movie.Movie {Name ="Cinderella", Year = new DateTime(2000,10,15), Description="privi", Rating=3.5},
+            };
             context.Shows.AddOrUpdate(shows);
             context.Episodes.AddOrUpdate(episodes);
-            
+            context.Movies.AddOrUpdate(movies);
 
         }
     }

@@ -30,5 +30,10 @@ namespace ShowMe_UI
 
             }
         }
+
+        private void ShowCollectionList_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+
+        }
     }
 }
