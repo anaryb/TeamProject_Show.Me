@@ -12,6 +12,7 @@ namespace TeamProject_ShowMe.User
         public string UserName { get; set; }
         public string UserLogin { get; set; }
         public string UserPassword { get; set; }
+        //
 
     }
 }
