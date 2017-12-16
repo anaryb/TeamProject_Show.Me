@@ -14,16 +14,41 @@ using System.Windows.Shapes;
 
 namespace ShowMe_UI
 {
+    public delegate void MovieAction(TeamProject_ShowMe.Movie.Movie movie);
     /// <summary>
     /// Логика взаимодействия для AddNewMovieWindow.xaml
     /// </summary>
     public partial class AddNewMovieWindow : Window
     {
-        AdminMovieCollectionPage AMC { get; set; }
+        public MovieAction OkAction { get; set; }
+        public TeamProject_ShowMe.Movie.Movie Movie { get; set; }
 
-        public AddNewMovieWindow(AdminMovieCollectionPage amc)
+        private string _oldName;
+
+        public AddNewMovieWindow(TeamProject_ShowMe.Movie.Movie movie, MovieAction okActiom)
+
         {
             InitializeComponent();
+            _oldName = movie.Name;
+            Movie = movie;
+            OkAction = okActiom;
+            DataContext = movie;
+        }
+
+        private void buttonAddNewMovie_Click(object sender, RoutedEventArgs e)
+        {
+            OkAction(Movie);
+            Close();
+        }
+
+        private void cancelButton_Click(object sender, RoutedEventArgs e)
+        {
+            Movie.Name = _oldName;
+            Close();
         }
     }
 }
+
+
+
+

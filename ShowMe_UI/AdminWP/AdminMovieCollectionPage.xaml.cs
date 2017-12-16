@@ -31,10 +31,31 @@ namespace ShowMe_UI
             }
         }
 
+        private void AddNew(TeamProject_ShowMe.Movie.Movie movie)
+        {
+            using (TeamProject_ShowMe.MediaCenterContext db = new TeamProject_ShowMe.MediaCenterContext())
+            {
+                db.MovieRepository.Load();
+                db.MovieRepository.AddMovie(movie);
+                adminMoviesList.ItemsSource = db.MovieRepository.Movies;
+
+
+            }
+        }
+        private void Edit(TeamProject_ShowMe.Movie.Movie movie)
+        {
+            using (TeamProject_ShowMe.MediaCenterContext db = new TeamProject_ShowMe.MediaCenterContext())
+            {
+                db.MovieRepository.UpdateMovie(movie);
+            }
+        }
+
+
         private void AddNewMovieAdmin_Click(object sender, RoutedEventArgs e)
         {
-            var w = new ShowMe_UI.AddNewMovieWindow(this);
+            var w = new ShowMe_UI.AddNewMovieWindow(new TeamProject_ShowMe.Movie.Movie(), AddNew);
             w.Show();
         }
     }
 }
+
