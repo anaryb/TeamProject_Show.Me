@@ -19,7 +19,21 @@ namespace TeamProject_ShowMe.Migrations
             //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
             //  to avoid creating duplicate seed data.
 
-
+            Show.Show[] shows =
+            {
+                new Show.Show{  Name = "Brain on fire",Year = new DateTime(2017,12,12), Rating = 4.7, Description = "a" },
+                new Show.Show{  Name = "HTAWM",Year = new DateTime(2016,11,12), Rating = 4.9, Description = "b" },
+                new Show.Show{  Name = "love the world",Year = new DateTime(1999,09,09), Rating = 4.2, Description = "c" },
+            };
+            Episode.Episode[] episodes =
+            {
+            new Episode.Episode{  Name="01", Season=2, Show = shows[0]},
+            new Episode.Episode{  Name="02", Season=1, Show = shows[1]},
+            new Episode.Episode{ Name="03", Season=3, Show = shows[2]}
+            };
+            context.Shows.AddOrUpdate(shows);
+            context.Episodes.AddOrUpdate(episodes);
+            
 
         }
     }

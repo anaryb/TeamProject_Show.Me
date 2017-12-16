@@ -23,6 +23,12 @@ namespace ShowMe_UI
         public ShowCollectionPage()
         {
             InitializeComponent();
+            using (TeamProject_ShowMe.MediaCenterContext db = new TeamProject_ShowMe.MediaCenterContext())
+            {
+                db.ShowRepository.Load();
+                ShowCollectionList.ItemsSource = db.ShowRepository.Shows;
+
+            }
         }
     }
 }
