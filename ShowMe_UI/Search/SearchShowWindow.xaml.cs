@@ -42,7 +42,7 @@ namespace ShowMe_UI
             {
                 SearchShowList = db.ShowRepository.SearchShow(textBoxSearchShow.Text);
                 SearchShList?.Invoke(SearchShowList);
-
+                this.Close();
 
             }
 

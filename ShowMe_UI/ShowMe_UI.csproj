@@ -82,7 +82,6 @@
     <Compile Include="AuthReg\AuthorizationWindow.xaml.cs">
       <DependentUpon>AuthorizationWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ImagePathConverter.cs" />
     <Compile Include="MediaCenterWindow.xaml.cs">
       <DependentUpon>MediaCenterWindow.xaml</DependentUpon>
     </Compile>

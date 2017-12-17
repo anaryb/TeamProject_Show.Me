@@ -44,6 +44,7 @@ namespace ShowMe_UI
             {
                 SearchList = db.MovieRepository.SearchMovie(textBoxSearch.Text);
                 SeaList?.Invoke(SearchList);
+                this.Close();
 
 
             }
