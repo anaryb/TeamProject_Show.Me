@@ -23,7 +23,7 @@ namespace ShowMe_UI
 
 
         public ShowAction OkAction { get; set; }
-        public TeamProject_ShowMe.Show.Show Show { get; set; }
+        public TeamProject_ShowMe.Show.Show ShowC { get; set; }
 
         private string _oldName;
         private double _oldRating;
@@ -38,25 +38,27 @@ namespace ShowMe_UI
             _oldRating = show.Rating;
             _oldYear = show.Year;
             _oldDescription = show.Description;
-            Show = show;
+            ShowC = show;
             OkAction = okAction;
             DataContext = show;
         }
 
         private void buttonAddNewShow_Click(object sender, RoutedEventArgs e)
         {
-            OkAction(Show);
+            OkAction(ShowC);
             Close();
         }
 
         private void cancelButton_Click(object sender, RoutedEventArgs e)
         {
-            Show.Name = _oldName;
-            Show.Rating = _oldRating;
-            Show.Year = _oldYear;
-            Show.Description = _oldDescription;
+            ShowC.Name = _oldName;
+            ShowC.Rating = _oldRating;
+            ShowC.Year = _oldYear;
+            ShowC.Description = _oldDescription;
             Close();
         }
+
+       
     }
 }
 

@@ -15,7 +15,9 @@ namespace TeamProject_ShowMe.Show
         public IEnumerable<Show> Shows { get { return _db.Shows.Local; } }
 
         public ShowRepository(MediaCenterContext db)
-        { _db = db; }
+        {
+            _db = db;
+        }
 
         public void AddShow(Show show)
         {
@@ -25,8 +27,11 @@ namespace TeamProject_ShowMe.Show
 
         public void UpdateShow(Show show)
         {
-            _db.Entry(show).State = System.Data.Entity.EntityState.Modified;
-            _db.SaveChanges();
+            if (show != null)
+            {
+                _db.Entry(show).State = System.Data.Entity.EntityState.Modified;
+                _db.SaveChanges();
+            }
         }
 
         public void RemoveShow(Show show)

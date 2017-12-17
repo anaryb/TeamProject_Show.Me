@@ -30,31 +30,31 @@
 
             <TextBlock Margin="7" Grid.Column="0">ImageSource</TextBlock>
             <TextBlock Margin="7" Grid.Column="0" Grid.Row="1" TextWrapping="Wrap" FontSize="10">Input like: *Folder*/*filename*.jpg</TextBlock>
-            <TextBox x:Name="textboxAddNewMovieImage" Margin="5" Grid.Row="2" Grid.Column="0" />
+            <TextBox x:Name="textboxAddNewMovieImage" Text="{Binding Path=ImageMovie}" Margin="5" Grid.Row="2" Grid.Column="0" />
 
             <TextBlock Margin="7" Grid.Column="1">Name</TextBlock>
-            <TextBox x:Name="textboxAddNewMovieName" Margin="5" Grid.Column="2" >
+            <TextBox x:Name="textboxAddNewMovieName" Margin="5" Grid.Column="2" Text="{Binding Path=Name}" >
 
             </TextBox>
             <TextBlock   Margin="7" Grid.Row="1" Grid.Column="1">Year</TextBlock>
-            <TextBox x:Name="textboxAddNewMovieYear" Margin="5" Grid.Row="1" Grid.Column="2">
+            <TextBox x:Name="textboxAddNewMovieYear" Margin="5" Grid.Row="1" Grid.Column="2" Text="{Binding Path=Year}">
             </TextBox>
             <TextBlock Margin="7" Grid.Row="2" Grid.Column="1">Rating</TextBlock>
-            <TextBox x:Name="textboxAddNewMovieRating"  Margin="5" Grid.Row="2" Grid.Column="2" ></TextBox>
+            <TextBox x:Name="textboxAddNewMovieRating"  Margin="5" Text="{Binding Path=Rating}" Grid.Row="2" Grid.Column="2" ></TextBox>
 
             <TextBlock Margin="7" Grid.Row="3" Grid.Column="1">Genre</TextBlock>
-            <TextBox x:Name="textboxAddNewMovieGenre"  Margin="5" Grid.Row="3" Grid.Column="2" ></TextBox>
+            <TextBox x:Name="textboxAddNewMovieGenre"  Margin="5" Grid.Row="3" Grid.Column="2" Text="{Binding Path=Genre}"></TextBox>
 
 
             <TextBlock Margin="7,7,7,0" Grid.Row="3">Description</TextBlock>
-            <TextBox x:Name="textboxAddNewMovieDesc" Margin="7" Grid.Row="4" Grid.ColumnSpan="3"
-                                     VerticalScrollBarVisibility="Visible" TextWrapping="Wrap"/>
+            <TextBox x:Name="textboxAddNewMovieDesc"  Margin="7" Grid.Row="4" Grid.ColumnSpan="3"
+                                     VerticalScrollBarVisibility="Visible" Text="{Binding Path=Desription}"></TextBox>
         </Grid>
         <StackPanel Grid.Row="1" HorizontalAlignment="Right" Orientation="Horizontal" >
-            <Button x:Name="okButton" Margin="2,0,2,2"  Padding="2" Content="Ok" Height="23"  Click="buttonAddNewMovie_Click" />
+            <Button x:Name="okButton" Margin="2,0,2,2"  Padding="2" Content="Ok"  Click="buttonAddNewMovie_Click" />
             <Button x:Name="cancel" Margin="2,0,2,2"  Padding="2" Content="Cancel" Click="cancel_Click" />
         </StackPanel>
 
     </Grid>
-    
+
 </Window>
