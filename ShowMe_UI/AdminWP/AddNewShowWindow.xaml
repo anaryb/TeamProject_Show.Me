@@ -30,23 +30,23 @@
 
             <TextBlock Margin="7" Grid.Column="0">ImageSource</TextBlock>
             <TextBlock Margin="7" Grid.Column="0" Grid.Row="1" TextWrapping="Wrap" FontSize="10">Input like: *Folder*/*filename*.jpg</TextBlock>
-            <TextBox x:Name="textboxAddNewShowImage" Margin="5" Grid.Row="2" Grid.Column="0" />
+            <TextBox x:Name="textboxAddNewShowImage" Margin="5" Grid.Row="2" Grid.Column="0" Text="{Binding Path=ImageShow}"/>
 
             <TextBlock Margin="7" Grid.Column="1">Name</TextBlock>
-            <TextBox x:Name="textboxAddNewShowName" Margin="5" Grid.Column="2" >
+            <TextBox x:Name="textboxAddNewShowName" Margin="5" Grid.Column="2" Text="{Binding Path=Name}">
 
             </TextBox>
             <TextBlock   Margin="7" Grid.Row="1" Grid.Column="1">Year</TextBlock>
-            <TextBox x:Name="textboxAddNewShowYear" Margin="5" Grid.Row="1" Grid.Column="2">
+            <TextBox x:Name="textboxAddNewShowYear" Margin="5" Text="{Binding Path=Year}" Grid.Row="1" Grid.Column="2">
             </TextBox>
             <TextBlock Margin="7" Grid.Row="2" Grid.Column="1">Rating</TextBlock>
-            <TextBox x:Name="textboxAddNewShowRating"  Margin="5" Grid.Row="2" Grid.Column="2" ></TextBox>
+            <TextBox x:Name="textboxAddNewShowRating"  Margin="5" Grid.Row="2" Grid.Column="2" Text="{Binding Path=Rating}" ></TextBox>
             <TextBlock Margin="7" Grid.Row="3" Grid.Column="1">Genre</TextBlock>
-            <TextBox x:Name="textboxAddNewShowGenre"  Margin="5" Grid.Row="3" Grid.Column="2" ></TextBox>
+            <TextBox x:Name="textboxAddNewShowGenre" Text="{Binding Path=Genre}" Margin="5" Grid.Row="3" Grid.Column="2" ></TextBox>
             
             
             <TextBlock Margin="7,7,7,0" Grid.Row="3">Description</TextBlock>
-            <TextBox x:Name="textboxAddNewShowDesc" Margin="7" Grid.Row="4" Grid.ColumnSpan="3"
+            <TextBox x:Name="textboxAddNewShowDesc" Margin="7" Grid.Row="4" Text="{Binding Path=Description}" Grid.ColumnSpan="3"
                                      VerticalScrollBarVisibility="Visible" TextWrapping="Wrap"/>
         </Grid>
         <StackPanel Grid.Row="1" HorizontalAlignment="Right" Orientation="Horizontal" >
