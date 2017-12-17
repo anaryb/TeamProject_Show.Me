@@ -52,16 +52,16 @@ namespace ShowMe_UI
         //        db.MovieRepository.UpdateMovie(movie);
         //    }
         //}
-        //private void Delete(TeamProject_ShowMe.Movie.Movie movie)
-        //{
-        //    using (TeamProject_ShowMe.MediaCenterContext db = new TeamProject_ShowMe.MediaCenterContext())
-        //    {
-        //        db.MovieRepository.RemoveMovie(movie);
-        //        adminMoviesList.ItemsSource = db.MovieRepository.Movies;
-        //        db.MovieRepository.Load();
+        private void Delete(TeamProject_ShowMe.Movie.Movie movie)
+        {
+            using (TeamProject_ShowMe.MediaCenterContext db = new TeamProject_ShowMe.MediaCenterContext())
+            {
+                db.MovieRepository.RemoveMovie(movie);
+                adminMoviesList.ItemsSource = db.MovieRepository.Movies;
+                db.MovieRepository.Load();
 
-        //    }
-        //}
+            }
+        }
 
 
         private void AddNewMovieAdmin_Click(object sender, RoutedEventArgs e)
@@ -80,9 +80,6 @@ namespace ShowMe_UI
             adminMoviesList.ItemsSource = null;
             adminMoviesList.ItemsSource = context.Movies.Local.ToBindingList();
             context.SaveChanges();
-                
-
-
             
         }
 

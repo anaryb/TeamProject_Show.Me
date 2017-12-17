@@ -11,29 +11,42 @@
       Title="Movies Collection">
 
     <Grid>
-        <ListBox x:Name="MovieCollectionList" Margin="5">
-            <ListBox.ItemTemplate>
-                <DataTemplate>
-                    <Border Margin="5" BorderThickness="1" BorderBrush="SteelBlue" CornerRadius="4" Width="400" >
-                        <Grid Margin="3">
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="Auto"/>
-                                <ColumnDefinition/>
-                            </Grid.ColumnDefinitions>
-                            <Image Grid.RowSpan="2" Width="100" Height="75" Margin="6" Source="{Binding Path=ImageMovie}"/>
-                           
-                            <StackPanel Grid.Column="1" Margin="2,6">
-                                <TextBlock FontWeight="Bold" Text="{Binding Path=Name}"/>
-                                <TextBlock Text="{Binding Path=Year}"/>
-                                <TextBlock FontWeight="SemiBold" Text="{Binding Path=Genre}"/>
-                                <TextBlock Text="{Binding Path=Description}"/>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="35"/>
+        </Grid.RowDefinitions>
+        <Grid>
+            <ListBox x:Name="MovieCollectionList">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Border Margin="5" BorderThickness="1" BorderBrush="SteelBlue" CornerRadius="4" Width="400" >
+                            <Grid Margin="3">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <Image Grid.RowSpan="2" Width="100" Height="75" Margin="6" Source="{Binding Path=ImageMovie}"/>
 
-                            </StackPanel>
-                        </Grid>
-                    </Border>
-                </DataTemplate>
-            </ListBox.ItemTemplate>
-        </ListBox>
+                                <StackPanel Grid.Column="1" Margin="2,6">
+                                    <TextBlock FontWeight="Bold" Text="{Binding Path=Name}"/>
+                                    <TextBlock Text="{Binding Path=Year}"/>
+                                    <TextBlock FontWeight="SemiBold" Text="{Binding Path=Genre}"/>
+                                    <TextBlock Text="{Binding Path=Description}"/>
 
+                                </StackPanel>
+                            </Grid>
+                        </Border>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+        </Grid>
+        <Grid Grid.Row="2" Background="White" >
+            <StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
+                
+                <Button x:Name="buttonSearchMovie" Margin="2" Content="Search" Width="100" VerticalAlignment="Bottom" Click="buttonSearchMovie_Click" />
+                <Button x:Name="buttonListMovie" Margin="2" Content="All Movies" Width="100" VerticalAlignment="Bottom" Click="buttonListMovie_Click" />
+            </StackPanel>
+            
+        </Grid>
     </Grid>
 </Page>

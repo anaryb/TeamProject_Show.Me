@@ -14,8 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-
-
+using TeamProject_ShowMe.Movie;
 
 namespace ShowMe_UI
 {
@@ -32,9 +31,33 @@ namespace ShowMe_UI
                 db.MovieRepository.Load();
                 MovieCollectionList.ItemsSource = db.MovieRepository.Movies;
 
+            }    
+            
+        }
+
+        private void buttonSearchMovie_Click(object sender, RoutedEventArgs e)
+        {
+            var w = new SearchWindow(this);
+            w.SeaList += UpdateList;
+            w.Show();
+
+        }
+
+        private void UpdateList(IEnumerable l)
+        {
+            MovieCollectionList.ItemsSource = null;
+            MovieCollectionList.ItemsSource = l;
+        }
+
+        private void buttonListMovie_Click(object sender, RoutedEventArgs e)
+        {
+            using (TeamProject_ShowMe.MediaCenterContext db = new TeamProject_ShowMe.MediaCenterContext())
+            {
+                db.MovieRepository.Load();
+                MovieCollectionList.ItemsSource = null;
+                MovieCollectionList.ItemsSource = db.MovieRepository.Movies;
+
             }
-            
-            
         }
     }
 }

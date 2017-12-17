@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ShowMe_UI"
         mc:Ignorable="d"
-        Title="AdminMediaCentreWindow" Height="300" Width="300">
+        Title="AdminMediaCentreWindow" SizeToContent="WidthAndHeight">
     <Grid>
         <Grid>
             <Grid.RowDefinitions>

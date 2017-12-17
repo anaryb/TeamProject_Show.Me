@@ -92,6 +92,12 @@
     <Compile Include="AuthReg\RegistrationWindow.xaml.cs">
       <DependentUpon>RegistrationWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Search\SearchShowWindow.xaml.cs">
+      <DependentUpon>SearchShowWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Search\SearchWindow.xaml.cs">
+      <DependentUpon>SearchWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ShowCollectionPage.xaml.cs">
       <DependentUpon>ShowCollectionPage.xaml</DependentUpon>
     </Compile>
@@ -140,6 +146,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="AuthReg\RegistrationWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Search\SearchShowWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Search\SearchWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

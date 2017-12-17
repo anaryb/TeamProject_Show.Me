@@ -9,6 +9,11 @@
       Title="Show Collection" Background="White">
 
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition Height="35"/>
+        </Grid.RowDefinitions>
+
         <ListBox x:Name="ShowCollectionList" Margin="5">
             <ListBox.ItemTemplate>
                 <DataTemplate>
@@ -25,13 +30,16 @@
                                 <TextBlock Text="{Binding Path=Year}"/>
                                 <TextBlock FontWeight="SemiBold" Text="{Binding Path=Genre}"/>
                                 <TextBlock Text="{Binding Path=Description}"/>
-                                
+
                             </StackPanel>
                         </Grid>
                     </Border>
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
-
+        <StackPanel Grid.Row="1"  HorizontalAlignment="Right" Orientation="Horizontal">
+            <Button x:Name="buttonSearchShow" Margin="2" Content="Search" Width="100" VerticalAlignment="Center" Click="buttonSearchShow_Click"  />
+            <Button x:Name="buttonListShow" Margin="2" Content="All Shows" Width="100" VerticalAlignment="Center" Click="buttonListShow_Click" />
+        </StackPanel>
     </Grid>
 </Page>

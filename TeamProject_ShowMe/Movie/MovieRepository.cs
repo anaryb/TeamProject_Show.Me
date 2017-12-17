@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data;
+using System.Collections;
 
 namespace TeamProject_ShowMe.Movie
 {
@@ -57,6 +58,19 @@ namespace TeamProject_ShowMe.Movie
         public void Load()
         {
             _db.Movies.Load();
+        }
+
+
+        string searchI;
+        public IEnumerable SearchMovie(string searchParam)
+        {
+            searchI = searchParam;
+            using (TeamProject_ShowMe.MediaCenterContext db = new TeamProject_ShowMe.MediaCenterContext())
+            {
+                var searchEl = db.Movies
+                    .Where(el => el.Name.Contains(searchI)).ToList();
+                return searchEl;
+            }
         }
     }
 }

@@ -1,0 +1,14 @@
+﻿<Window x:Class="ShowMe_UI.SearchWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ShowMe_UI"
+        mc:Ignorable="d"
+        Title="SearchWindow" SizeToContent="WidthAndHeight">
+    <Grid>
+        <TextBlock  HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center" Margin="20,25,284,108" TextWrapping="Wrap" Height="37" Width="134">What do you want to Find?</TextBlock>
+        <TextBox x:Name="textBoxSearch" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="136,25,56,123" Width="200" ></TextBox>
+        <Button x:Name="buttonSearchinMovies" Content="Find Next" MaxHeight="30" MaxWidth="100" Click="buttonSearchinMovies_Click"></Button>
+    </Grid>
+</Window>

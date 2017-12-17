@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,7 +14,7 @@ namespace TeamProject_ShowMe.Movie
         void AddMovie(Movie movie);
         void RemoveMovie(Movie movie);
         void UpdateMovie(Movie movie, string name, int year, double rating, string genre, string description, string imageMovie);
-
+        IEnumerable SearchMovie(string searchParam);
         void Load();
     }
 }

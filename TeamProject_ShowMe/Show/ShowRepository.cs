@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.Entity;
 using System.Data;
+using System.Collections;
 
 namespace TeamProject_ShowMe.Show
 {
@@ -25,6 +26,7 @@ namespace TeamProject_ShowMe.Show
 
         public void UpdateShow(Show show)
         {
+
             _db.Entry(show).State = System.Data.Entity.EntityState.Modified;
             _db.SaveChanges();
         }
@@ -42,6 +44,19 @@ namespace TeamProject_ShowMe.Show
         public void Load()
         {
             _db.Shows.Load();
+        }
+
+
+        string searchS;
+        public IEnumerable SearchShow(string searchParam)
+        {
+            searchS = searchParam;
+            using (TeamProject_ShowMe.MediaCenterContext db = new TeamProject_ShowMe.MediaCenterContext())
+            {
+                var searchEl = db.Shows
+                    .Where(el => el.Name.Contains(searchS)).ToList();
+                return searchEl;
+            }
         }
     }
 }

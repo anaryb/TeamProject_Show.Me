@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -31,6 +32,28 @@ namespace ShowMe_UI
             }
         }
 
+        private void buttonSearchShow_Click(object sender, RoutedEventArgs e)
+        {
+            var w = new SearchShowWindow(this);
+            w.SearchShList += UpdateList;
+            w.Show();
+        }
 
+        private void UpdateList(IEnumerable l)
+        {
+            ShowCollectionList.ItemsSource = null;
+            ShowCollectionList.ItemsSource = l;
+        }
+
+        private void buttonListShow_Click(object sender, RoutedEventArgs e)
+        {
+            using (TeamProject_ShowMe.MediaCenterContext db = new TeamProject_ShowMe.MediaCenterContext())
+            {
+                db.ShowRepository.Load();
+                ShowCollectionList.ItemsSource = null;
+                ShowCollectionList.ItemsSource = db.ShowRepository.Shows;
+
+            }
+        }
     }
 }
