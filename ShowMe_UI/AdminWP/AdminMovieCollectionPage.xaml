@@ -29,6 +29,7 @@
                                 <GridViewColumn Header="Name" Width="Auto"  DisplayMemberBinding="{Binding Path=Name}"></GridViewColumn>
                                 <GridViewColumn Header="Year" Width="Auto"  DisplayMemberBinding="{Binding Path=Year}"></GridViewColumn>
                                 <GridViewColumn Header="Rating" Width="Auto" DisplayMemberBinding="{Binding Path=Rating}"></GridViewColumn>
+                                <GridViewColumn Header="Genre" Width="Auto" DisplayMemberBinding="{Binding Path=Genre}"></GridViewColumn>
                                 <GridViewColumn Header="Description" Width="Auto"  DisplayMemberBinding="{Binding Path=Description}"></GridViewColumn>
                             </GridView.Columns>
                         </GridView>
@@ -55,6 +56,8 @@
                     <RowDefinition Height="Auto"></RowDefinition>
                     <RowDefinition Height="Auto"></RowDefinition>
                     <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    
                     <RowDefinition Height="*"></RowDefinition>
                 </Grid.RowDefinitions>
 
@@ -69,9 +72,13 @@
                 <TextBox x:Name="textboxEditMovieYear" Margin="5" Grid.Row="1" Grid.Column="2" Text="{Binding Path=Year}" />
                 <TextBlock Margin="7" Grid.Row="2" Grid.Column="1">Rating</TextBlock>
                 <TextBox x:Name="textboxEditMovieRating" Margin="5" Grid.Row="2" Grid.Column="2" Text="{Binding Path=Rating}" />
-
+                <TextBlock Margin="7" Grid.Row="3" Grid.Column="1">Genre</TextBlock>
+                <TextBox x:Name="textboxEditMovieGenre" Margin="5" Grid.Row="3" Grid.Column="2" Text="{Binding Path=Genre}" />
+                
+                
                 <TextBlock Margin="7,7,7,0" Grid.Row="3">Description</TextBlock>
-                <TextBox Margin="7" Grid.Row="4" Grid.ColumnSpan="3"
+                
+                <TextBox Margin="7" Grid.Row="5" Grid.ColumnSpan="3"
                                      VerticalScrollBarVisibility="Visible" TextWrapping="Wrap" 
                                      Text="{Binding Path=Description}"/>
             </Grid>

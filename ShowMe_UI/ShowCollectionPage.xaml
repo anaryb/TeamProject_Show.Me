@@ -9,20 +9,29 @@
       Title="Show Collection" Background="White">
 
     <Grid>
-        <ScrollViewer Grid.ColumnSpan="4">
-            <ListView Name="ShowCollectionList" Margin="5" Background="LightBlue" >
-            <ListView.View>
-                <GridView>
-                    <GridView.Columns>
-                        <GridViewColumn Header="Show Name" Width="Auto"  DisplayMemberBinding="{Binding Path=Name}"></GridViewColumn>
-                        <GridViewColumn Header="Year" Width="50"  DisplayMemberBinding="{Binding Path=Year}"></GridViewColumn>
-                        <GridViewColumn Header="Description" Width="100" DisplayMemberBinding="{Binding Path=Description}"></GridViewColumn>
-                        <GridViewColumn Header="Rating" Width="100"  DisplayMemberBinding="{Binding Path=Rating}"></GridViewColumn>
-                    </GridView.Columns>
-                </GridView>
-            </ListView.View>
-             </ListView>
-        </ScrollViewer>
-        
+        <ListBox x:Name="ShowCollectionList" Margin="5">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Border Margin="5" BorderThickness="1" BorderBrush="SteelBlue" CornerRadius="4" Width="370">
+                        <Grid Margin="3">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
+                            <Image Grid.RowSpan="2" Width="100" Height="75" Margin="6"
+                           Source="{Binding Path=ImageCar}"/>
+                            <StackPanel Grid.Column="1" Margin="2,6">
+                                <TextBlock FontWeight="Bold" Text="{Binding Path=Name}"/>
+                                <TextBlock Text="{Binding Path=Year}"/>
+                                <TextBlock FontWeight="SemiBold" Text="{Binding Path=Genre}"/>
+                                <TextBlock Text="{Binding Path=Description}"/>
+                                
+                            </StackPanel>
+                        </Grid>
+                    </Border>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+
     </Grid>
 </Page>

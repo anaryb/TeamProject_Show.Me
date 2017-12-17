@@ -26,8 +26,9 @@ namespace TeamProject_ShowMe.Migrations
                     {
                         Id = c.Int(nullable: false, identity: true),
                         Name = c.String(),
-                        Year = c.DateTime(nullable: false),
+                        Year = c.Int(nullable: false),
                         Rating = c.Double(nullable: false),
+                        Genre = c.String(),
                         Description = c.String(),
                     })
                 .PrimaryKey(t => t.Id);
@@ -38,8 +39,9 @@ namespace TeamProject_ShowMe.Migrations
                     {
                         Id = c.Int(nullable: false, identity: true),
                         Name = c.String(),
-                        Year = c.DateTime(nullable: false),
+                        Year = c.Int(nullable: false),
                         Rating = c.Double(nullable: false),
+                        Genre = c.String(),
                         Description = c.String(),
                     })
                 .PrimaryKey(t => t.Id);

@@ -39,6 +39,11 @@
             </TextBox>
             <TextBlock Margin="7" Grid.Row="2" Grid.Column="1">Rating</TextBlock>
             <TextBox x:Name="textboxAddNewMovieRating"  Margin="5" Grid.Row="2" Grid.Column="2" ></TextBox>
+
+            <TextBlock Margin="7" Grid.Row="3" Grid.Column="1">Genre</TextBlock>
+            <TextBox x:Name="textboxAddNewMovieGenre"  Margin="5" Grid.Row="3" Grid.Column="2" ></TextBox>
+
+
             <TextBlock Margin="7,7,7,0" Grid.Row="3">Description</TextBlock>
             <TextBox x:Name="textboxAddNewMovieDesc" Margin="7" Grid.Row="4" Grid.ColumnSpan="3"
                                      VerticalScrollBarVisibility="Visible" TextWrapping="Wrap"/>

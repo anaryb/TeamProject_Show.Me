@@ -25,8 +25,10 @@ namespace ShowMe_UI
 
         private string _oldName;
         private double _oldRating;
-        private DateTime _oldYear;
+        private int _oldYear;
         private string _oldDescription;
+        private string _oldGenre;
+
 
         public AddNewMovieWindow(TeamProject_ShowMe.Movie.Movie movie, MovieAction okActiom)
 
@@ -36,6 +38,7 @@ namespace ShowMe_UI
             _oldDescription = movie.Description;
             _oldRating = movie.Rating;
             _oldYear = movie.Year;
+            _oldGenre = movie.Genre;
             Movie = movie;
             OkAction = okActiom;
             DataContext = movie;
@@ -53,6 +56,7 @@ namespace ShowMe_UI
             Movie.Description = _oldDescription;
             Movie.Rating = _oldRating;
             Movie.Year = _oldYear;
+            Movie.Genre = _oldGenre;
             Close();
         }
 

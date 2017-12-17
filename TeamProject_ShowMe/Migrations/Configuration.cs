@@ -21,9 +21,9 @@ namespace TeamProject_ShowMe.Migrations
 
             Show.Show[] shows =
             {
-                new Show.Show{  Name = "Brain on fire",Year = new DateTime(2017,12,12), Rating = 4.7, Description = "a" },
-                new Show.Show{  Name = "HTAWM",Year = new DateTime(2016,11,12), Rating = 4.9, Description = "b" },
-                new Show.Show{  Name = "love the world",Year = new DateTime(1999,09,09), Rating = 4.2, Description = "c" },
+                new Show.Show{  Name = "Brain on fire",Year = 2017, Rating = 4.7, Description = "a", Genre = "Horror" },
+                new Show.Show{  Name = "HTAWM",Year = 2016, Rating = 4.9, Description = "b", Genre = "Romance" },
+                new Show.Show{  Name = "love the world",Year = 1998, Rating = 4.2, Description = "c", Genre = "Comedy" },
             };
             Episode.Episode[] episodes =
             {
@@ -33,13 +33,12 @@ namespace TeamProject_ShowMe.Migrations
             };
             Movie.Movie[] movies =
             {
-                new Movie.Movie {Name ="101 Dalmatinez", Year = new DateTime(1998,12,30), Description="hello", Rating=4.5},
-                new Movie.Movie {Name ="Cinderella", Year = new DateTime(2000,10,15), Description="privi", Rating=3.5},
+                new Movie.Movie {Name ="101 Dalmatinez", Year = 1998, Description="hello", Rating=4.5, Genre = "Cartoon"},
+                new Movie.Movie {Name ="Cinderella", Year = 2000, Description="privi", Rating=3.5, Genre = "Cartoon"},
             };
             context.Shows.AddOrUpdate(shows);
             context.Episodes.AddOrUpdate(episodes);
             context.Movies.AddOrUpdate(movies);
-
         }
     }
 }

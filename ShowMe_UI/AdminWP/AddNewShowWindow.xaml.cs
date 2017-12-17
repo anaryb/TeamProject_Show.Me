@@ -27,7 +27,7 @@ namespace ShowMe_UI
 
         private string _oldName;
         private double _oldRating;
-        private DateTime _oldYear;
+        private int _oldYear;
         private string _oldDescription;
 
 

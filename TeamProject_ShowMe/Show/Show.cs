@@ -12,9 +12,11 @@ namespace TeamProject_ShowMe.Show
 
         public string Name { get; set; }
 
-        public DateTime Year { get; set; }
+        public int Year { get; set; }
 
         public double Rating { get; set; }
+
+        public string Genre { get; set; }
 
         public string Description { get; set; }
 
