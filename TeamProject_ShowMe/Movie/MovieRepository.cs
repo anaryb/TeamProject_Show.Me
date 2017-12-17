@@ -26,7 +26,7 @@ namespace TeamProject_ShowMe.Movie
 
         public void UpdateMovie(Movie movie)
         {
-                _db.Entry(movie).State = System.Data.Entity.EntityState.Modified;
+            _db.Entry(movie).State = System.Data.Entity.EntityState.Modified;
             _db.SaveChanges();
         }
 

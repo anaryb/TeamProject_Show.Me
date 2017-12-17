@@ -32,10 +32,8 @@
                                     <TextBlock Text="{Binding Path=Year}"/>
                                     <TextBlock FontWeight="SemiBold" Text="{Binding Path=Genre}"/>
                                     <TextBlock Text="{Binding Path=Rating, StringFormat={}Rating: {0} }"/>
-                                    <TextBlock Text="{Binding Path=Description}"/>
-                                    
-                                    
-
+                                    <TextBlock TextWrapping="Wrap"
+                                        Text="{Binding Path=Description}"/>
                                 </StackPanel>
                             </Grid>
                         </Border>
