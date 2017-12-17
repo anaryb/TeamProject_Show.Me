@@ -35,6 +35,7 @@ namespace TeamProject_ShowMe.Migrations
             {
                 new Movie.Movie {Name ="101 Dalmatinez", Year = 1998, Description="hello", Rating=4.5, Genre = "Cartoon", ImageMovie = "Pictures/101Dalmat.jpg"},
                 new Movie.Movie {Name ="Cinderella", Year = 2000, Description="privi", Rating=3.5, Genre = "Cartoon", ImageMovie = "Pictures/cinderella.jpg"},
+                new Movie.Movie {Name ="Kingsman", Year = 2015, Description="funny", Rating=4.8, Genre = "Comedy", ImageMovie = "Pictures/cinderella.jpg"},
             };
             context.Shows.AddOrUpdate(s => s.Name,shows);
             //context.Episodes.AddOrUpdate(e =>e.Show, episodes);

@@ -55,5 +55,18 @@ namespace ShowMe_UI
 
             }
         }
+
+        private void buttonListShowbyRating_Click(object sender, RoutedEventArgs e)
+        {
+            using (TeamProject_ShowMe.MediaCenterContext db = new TeamProject_ShowMe.MediaCenterContext())
+            {
+                db.ShowRepository.Load();
+                ShowCollectionList.ItemsSource = null;
+                ShowCollectionList.ItemsSource = db.RatingSortShow();
+
+            }
+
+
+        }
     }
 }

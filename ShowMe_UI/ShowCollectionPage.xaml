@@ -29,7 +29,9 @@
                                 <TextBlock FontWeight="Bold" Text="{Binding Path=Name}"/>
                                 <TextBlock Text="{Binding Path=Year}"/>
                                 <TextBlock FontWeight="SemiBold" Text="{Binding Path=Genre}"/>
+                                <TextBlock Text="{Binding Path=Rating, StringFormat={}Rating: {0} }"/>
                                 <TextBlock Text="{Binding Path=Description}"/>
+                                
 
                             </StackPanel>
                         </Grid>
@@ -38,6 +40,7 @@
             </ListBox.ItemTemplate>
         </ListBox>
         <StackPanel Grid.Row="1"  HorizontalAlignment="Right" Orientation="Horizontal">
+            <Button x:Name="buttonListShowbyRating" Margin="2" Content="Sort by Rating" Width="100" VerticalAlignment="Center" Click="buttonListShowbyRating_Click"  />
             <Button x:Name="buttonSearchShow" Margin="2" Content="Search" Width="100" VerticalAlignment="Center" Click="buttonSearchShow_Click"  />
             <Button x:Name="buttonListShow" Margin="2" Content="All Shows" Width="100" VerticalAlignment="Center" Click="buttonListShow_Click" />
         </StackPanel>

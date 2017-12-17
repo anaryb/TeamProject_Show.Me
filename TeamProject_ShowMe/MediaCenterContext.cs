@@ -8,6 +8,7 @@ using TeamProject_ShowMe.Movie;
 using TeamProject_ShowMe.Show;
 using TeamProject_ShowMe.Episode;
 using TeamProject_ShowMe.User;
+using System.Collections;
 //using TeamProject_ShowMe.User;
 
 namespace TeamProject_ShowMe
@@ -33,6 +34,23 @@ namespace TeamProject_ShowMe
 
         }
 
+        public IEnumerable RatingSort()
+        {
+            Movies.Load();
+            var rs = (from s in MovieRepository.Movies
+                      orderby s.Rating descending
+                      select s).ToList();
+            return rs;
+        }
+
+        public IEnumerable RatingSortShow()
+        {
+            Shows.Load();
+            var rs = (from s in ShowRepository.Shows
+                      orderby s.Rating descending
+                      select s).ToList();
+            return rs;
+        }
 
 
     }
