@@ -21,7 +21,7 @@
                                 <ColumnDefinition/>
                             </Grid.ColumnDefinitions>
                             <Image Grid.RowSpan="2" Width="100" Height="75" Margin="6" Source="{Binding Path=ImageMovie}"/>
-
+                           
                             <StackPanel Grid.Column="1" Margin="2,6">
                                 <TextBlock FontWeight="Bold" Text="{Binding Path=Name}"/>
                                 <TextBlock Text="{Binding Path=Year}"/>

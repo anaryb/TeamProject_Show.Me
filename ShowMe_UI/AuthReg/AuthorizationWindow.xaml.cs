@@ -47,19 +47,21 @@ namespace ShowMe_UI
 
             const string adminpassword = "admin12345";
             var adminhash = context.UserRepository.CalculateHash(adminpassword);
+            int j = 0;
+            if ((textboxAuthLogin.Text == "admin") && (context.UserRepository.CalculateHash(passwordboxAuthPassword.Password) == adminhash))
+            {
+                MessageBox.Show("Admin Authorisation successful");
+                var w = new AdminMediaCentreWindow(this);
+                w.Show();
+                i = 1;
+                this.Close();
+                j = 1;
 
+            }
+            
             foreach (var au in context.Users)
             {
-                if ((textboxAuthLogin.Text == "admin") && (context.UserRepository.CalculateHash(passwordboxAuthPassword.Password) == adminhash))
-                {
-                    MessageBox.Show("Admin Authorisation successful");
-                    var w = new AdminMediaCentreWindow(this);
-                    w.Show();
-                    i = 1;
-                    this.Close();
-                    break;
-
-                }
+                j++;
                 if ((textboxAuthLogin.Text == au.UserLogin) && (context.UserRepository.CalculateHash(passwordboxAuthPassword.Password)== au.UserPassword))
                 {
                     MessageBox.Show("Authorisation successful");
@@ -72,6 +74,8 @@ namespace ShowMe_UI
             }
             if (i ==0)
                 MessageBox.Show("Wrong login or password");
+            if (j==0)
+                MessageBox.Show("Noone has registered in our application");
 
         }
     }
