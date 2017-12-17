@@ -20,5 +20,7 @@ namespace TeamProject_ShowMe.Show
 
         public string Description { get; set; }
 
+        public string ImageShow { get; set; }
+
     }
 }

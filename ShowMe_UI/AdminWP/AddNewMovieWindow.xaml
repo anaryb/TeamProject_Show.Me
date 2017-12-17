@@ -28,7 +28,9 @@
                 <RowDefinition Height="*"></RowDefinition>
             </Grid.RowDefinitions>
 
-            <Image Margin="5,0" Grid.RowSpan="3"/>
+            <TextBlock Margin="7" Grid.Column="0">ImageSource</TextBlock>
+            <TextBlock Margin="7" Grid.Column="0" Grid.Row="1" TextWrapping="Wrap" FontSize="10">Input like: *Folder*/*filename*.jpg</TextBlock>
+            <TextBox x:Name="textboxAddNewMovieImage" Margin="5" Grid.Row="2" Grid.Column="0" />
 
             <TextBlock Margin="7" Grid.Column="1">Name</TextBlock>
             <TextBox x:Name="textboxAddNewMovieName" Margin="5" Grid.Column="2" >

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,6 +21,7 @@ namespace ShowMe_UI
     /// </summary>
     public partial class AdminShowCollection : Page
     {
+        TeamProject_ShowMe.MediaCenterContext context = new TeamProject_ShowMe.MediaCenterContext();
         public AdminShowCollection()
         {
             InitializeComponent();
@@ -75,7 +77,8 @@ namespace ShowMe_UI
 
         private void RefrechList()
         {
-            var tab = adminShowList.ItemsSource;
+            context.Shows.Load();
+            var tab = context.Shows.Local.ToBindingList();
             adminShowList.ItemsSource = null;
             adminShowList.ItemsSource = tab;
         }
@@ -83,6 +86,7 @@ namespace ShowMe_UI
         private void DeleteShowAdmin_Click(object sender, RoutedEventArgs e)
         {
             Delete((TeamProject_ShowMe.Show.Show)adminShowList.SelectedItem);
+            RefrechList();
         }
     }
 }

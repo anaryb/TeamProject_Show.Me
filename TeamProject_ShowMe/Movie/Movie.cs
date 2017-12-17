@@ -20,6 +20,8 @@ namespace TeamProject_ShowMe.Movie
 
         public string Description { get; set; }
 
+        public string ImageMovie { get; set; }
+
         public override string ToString()
         {
             return Id.ToString() + Name;

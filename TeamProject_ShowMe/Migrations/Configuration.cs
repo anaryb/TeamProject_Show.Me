@@ -21,9 +21,9 @@ namespace TeamProject_ShowMe.Migrations
 
             Show.Show[] shows =
             {
-                new Show.Show{  Name = "Brain on fire",Year = 2017, Rating = 4.7, Description = "a", Genre = "Horror" },
-                new Show.Show{  Name = "HTAWM",Year = 2016, Rating = 4.9, Description = "b", Genre = "Romance" },
-                new Show.Show{  Name = "love the world",Year = 1998, Rating = 4.2, Description = "c", Genre = "Comedy" },
+                new Show.Show{  Name = "Brain on fire",Year = 2017, Rating = 4.7, Description = "a", Genre = "Horror", ImageShow = "Pictures/101Dalmat.jpg" },
+                new Show.Show{  Name = "HTAWM",Year = 2016, Rating = 4.9, Description = "b", Genre = "Romance" , ImageShow = "Pictures/101Dalmat.jpg"},
+                new Show.Show{  Name = "love the world",Year = 1998, Rating = 4.2, Description = "c", Genre = "Comedy", ImageShow = "Pictures/101Dalmat.jpg" },
             };
             Episode.Episode[] episodes =
             {
@@ -33,12 +33,12 @@ namespace TeamProject_ShowMe.Migrations
             };
             Movie.Movie[] movies =
             {
-                new Movie.Movie {Name ="101 Dalmatinez", Year = 1998, Description="hello", Rating=4.5, Genre = "Cartoon"},
-                new Movie.Movie {Name ="Cinderella", Year = 2000, Description="privi", Rating=3.5, Genre = "Cartoon"},
+                new Movie.Movie {Name ="101 Dalmatinez", Year = 1998, Description="hello", Rating=4.5, Genre = "Cartoon", ImageMovie = "Pictures/101Dalmat.jpg"},
+                new Movie.Movie {Name ="Cinderella", Year = 2000, Description="privi", Rating=3.5, Genre = "Cartoon", ImageMovie = "Pictures/cinderella.jpg"},
             };
-            context.Shows.AddOrUpdate(shows);
-            context.Episodes.AddOrUpdate(episodes);
-            context.Movies.AddOrUpdate(movies);
+            context.Shows.AddOrUpdate(s => s.Name,shows);
+            //context.Episodes.AddOrUpdate(e =>e.Show, episodes);
+            context.Movies.AddOrUpdate(m => m.Name,movies);
         }
     }
 }

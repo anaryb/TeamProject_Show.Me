@@ -31,8 +31,12 @@ namespace TeamProject_ShowMe.Show
 
         public void RemoveShow(Show show)
         {
-            _db.Shows.Remove(show);
-            _db.SaveChanges();
+            if (show!=null)
+            {
+                _db.Entry(show).State = System.Data.Entity.EntityState.Deleted;
+                _db.SaveChanges();
+            }
+            
         }
 
         public void Load()

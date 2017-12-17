@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using TeamProject_ShowMe.Movie;
 
 namespace ShowMe_UI
 {
@@ -20,6 +22,7 @@ namespace ShowMe_UI
     /// </summary>
     public partial class AdminMovieCollectionPage : Page
     {
+        TeamProject_ShowMe.MediaCenterContext context = new TeamProject_ShowMe.MediaCenterContext();
         public AdminMovieCollectionPage()
         {
             InitializeComponent();
@@ -42,23 +45,23 @@ namespace ShowMe_UI
 
             }
         }
-        private void Edit(TeamProject_ShowMe.Movie.Movie movie)
-        {
-            using (TeamProject_ShowMe.MediaCenterContext db = new TeamProject_ShowMe.MediaCenterContext())
-            {
-                db.MovieRepository.UpdateMovie(movie);
-            }
-        }
-        private void Delete(TeamProject_ShowMe.Movie.Movie movie)
-        {
-            using (TeamProject_ShowMe.MediaCenterContext db = new TeamProject_ShowMe.MediaCenterContext())
-            {
-                db.MovieRepository.RemoveMovie(movie);
-                adminMoviesList.ItemsSource = db.MovieRepository.Movies;
-                db.MovieRepository.Load();
+        //private void Edit(TeamProject_ShowMe.Movie.Movie movie)
+        //{
+        //    using (TeamProject_ShowMe.MediaCenterContext db = new TeamProject_ShowMe.MediaCenterContext())
+        //    {
+        //        db.MovieRepository.UpdateMovie(movie);
+        //    }
+        //}
+        //private void Delete(TeamProject_ShowMe.Movie.Movie movie)
+        //{
+        //    using (TeamProject_ShowMe.MediaCenterContext db = new TeamProject_ShowMe.MediaCenterContext())
+        //    {
+        //        db.MovieRepository.RemoveMovie(movie);
+        //        adminMoviesList.ItemsSource = db.MovieRepository.Movies;
+        //        db.MovieRepository.Load();
 
-            }
-        }
+        //    }
+        //}
 
 
         private void AddNewMovieAdmin_Click(object sender, RoutedEventArgs e)
@@ -68,21 +71,38 @@ namespace ShowMe_UI
         }
 
         private void DeleteMovieAdmin_Click(object sender, RoutedEventArgs e)
-        { 
-                Delete((TeamProject_ShowMe.Movie.Movie)adminMoviesList.SelectedItem);
+        {
+            //Delete((TeamProject_ShowMe.Movie.Movie)adminMoviesList.SelectedItem);
+           
+                context.MovieRepository.RemoveMovie((Movie)adminMoviesList.SelectedItem);
+            context.SaveChanges();
+            context.Movies.Load();
+            adminMoviesList.ItemsSource = null;
+            adminMoviesList.ItemsSource = context.Movies.Local.ToBindingList();
+            context.SaveChanges();
+                
+
+
+            
         }
 
         private void buttonSaveChangesMovies_Click(object sender, RoutedEventArgs e)
         {
-            Edit((TeamProject_ShowMe.Movie.Movie)adminMoviesList.SelectedItem);
+            //Edit((TeamProject_ShowMe.Movie.Movie)adminMoviesList.SelectedItem);
+
             RefrechList();
         }
 
         private void RefrechList()
         {
-            var tab = adminMoviesList.ItemsSource;
-            adminMoviesList.ItemsSource = null;
-            adminMoviesList.ItemsSource = tab;
+            using (var db = new TeamProject_ShowMe.MediaCenterContext())
+            {
+                var tab = db.Movies.Local.ToBindingList();
+                adminMoviesList.ItemsSource = null;
+                adminMoviesList.ItemsSource = tab;
+
+            }
+
         }
     }
 }

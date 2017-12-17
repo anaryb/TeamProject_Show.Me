@@ -82,6 +82,7 @@
     <Compile Include="AuthReg\AuthorizationWindow.xaml.cs">
       <DependentUpon>AuthorizationWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ImagePathConverter.cs" />
     <Compile Include="MediaCenterWindow.xaml.cs">
       <DependentUpon>MediaCenterWindow.xaml</DependentUpon>
     </Compile>
@@ -178,14 +179,28 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Pictures\Kino.png" />
-    <Resource Include="Pictures\Serial.png" />
+    <Resource Include="Pictures\Kino.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Pictures\Serial.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\TeamProject_ShowMe\TeamProject_ShowMe.csproj">
       <Project>{d69520dd-0dcc-4204-ace9-d1d0b11f4740}</Project>
       <Name>TeamProject_ShowMe</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Pictures\101Dalmat.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Pictures\cinderella.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
