@@ -13,7 +13,7 @@ namespace TeamProject_ShowMe.Movie
 
         void AddMovie(Movie movie);
         void RemoveMovie(Movie movie);
-        void UpdateMovie(Movie movie, string name, int year, double rating, string genre, string description, string imageMovie);
+        void UpdateMovie(Movie movie);
         IEnumerable SearchMovie(string searchParam);
         void Load();
     }

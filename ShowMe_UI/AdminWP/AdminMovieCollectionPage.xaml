@@ -77,10 +77,10 @@
                 
                 
                 <TextBlock Margin="7,7,7,0" Grid.Row="3">Description</TextBlock>
-                
-                <TextBox Margin="7" Grid.Row="5" Grid.ColumnSpan="3"
+
+                <TextBox  Margin="7" Grid.Row="5" Grid.ColumnSpan="3"
                                      VerticalScrollBarVisibility="Visible" TextWrapping="Wrap" 
-                                     Text="{Binding Path=Description}"/>
+                                     Text="{Binding Path=Description}" />
             </Grid>
         </Grid>
     </Grid>
