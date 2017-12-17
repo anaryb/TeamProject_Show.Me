@@ -49,12 +49,40 @@ namespace ShowMe_UI
             }
         }
 
+        private void Delete(TeamProject_ShowMe.Show.Show show)
+        {
+            using (TeamProject_ShowMe.MediaCenterContext db = new TeamProject_ShowMe.MediaCenterContext())
+            {
+                db.ShowRepository.RemoveShow(show);
+                adminShowList.ItemsSource = db.ShowRepository.Shows;
+                db.ShowRepository.Load();
+            }
+        }
+
         private void AddNewShowAdmin_Click(object sender, RoutedEventArgs e)
         {
             var w = new AddNewShowWindow(new TeamProject_ShowMe.Show.Show(), AddNew);
-            w.ShowDialog();
+            w.ShowDialog();///////////////////////
+        }
+
+        private void buttonSaveChangesMovies_Click(object sender, RoutedEventArgs e)
+        {
+            Edit((TeamProject_ShowMe.Show.Show)adminShowList.SelectedItem);
+            RefrechList();
         }
 
 
+
+        private void RefrechList()
+        {
+            var tab = adminShowList.ItemsSource;
+            adminShowList.ItemsSource = null;
+            adminShowList.ItemsSource = tab;
+        }
+
+        private void DeleteShowAdmin_Click(object sender, RoutedEventArgs e)
+        {
+            Delete((TeamProject_ShowMe.Show.Show)adminShowList.SelectedItem);
+        }
     }
 }

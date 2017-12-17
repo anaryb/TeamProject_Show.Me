@@ -49,12 +49,40 @@ namespace ShowMe_UI
                 db.MovieRepository.UpdateMovie(movie);
             }
         }
+        private void Delete(TeamProject_ShowMe.Movie.Movie movie)
+        {
+            using (TeamProject_ShowMe.MediaCenterContext db = new TeamProject_ShowMe.MediaCenterContext())
+            {
+                db.MovieRepository.RemoveMovie(movie);
+                adminMoviesList.ItemsSource = db.MovieRepository.Movies;
+                db.MovieRepository.Load();
+
+            }
+        }
 
 
         private void AddNewMovieAdmin_Click(object sender, RoutedEventArgs e)
         {
             var w = new ShowMe_UI.AddNewMovieWindow(new TeamProject_ShowMe.Movie.Movie(), AddNew);
-            w.Show();
+            w.ShowDialog();//////////////////////////
+        }
+
+        private void DeleteMovieAdmin_Click(object sender, RoutedEventArgs e)
+        { 
+                Delete((TeamProject_ShowMe.Movie.Movie)adminMoviesList.SelectedItem);
+        }
+
+        private void buttonSaveChangesMovies_Click(object sender, RoutedEventArgs e)
+        {
+            Edit((TeamProject_ShowMe.Movie.Movie)adminMoviesList.SelectedItem);
+            RefrechList();
+        }
+
+        private void RefrechList()
+        {
+            var tab = adminMoviesList.ItemsSource;
+            adminMoviesList.ItemsSource = null;
+            adminMoviesList.ItemsSource = tab;
         }
     }
 }

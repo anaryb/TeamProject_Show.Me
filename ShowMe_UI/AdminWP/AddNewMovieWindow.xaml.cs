@@ -24,12 +24,18 @@ namespace ShowMe_UI
         public TeamProject_ShowMe.Movie.Movie Movie { get; set; }
 
         private string _oldName;
+        private double _oldRating;
+        private DateTime _oldYear;
+        private string _oldDescription;
 
         public AddNewMovieWindow(TeamProject_ShowMe.Movie.Movie movie, MovieAction okActiom)
 
         {
             InitializeComponent();
             _oldName = movie.Name;
+            _oldDescription = movie.Description;
+            _oldRating = movie.Rating;
+            _oldYear = movie.Year;
             Movie = movie;
             OkAction = okActiom;
             DataContext = movie;
@@ -41,11 +47,16 @@ namespace ShowMe_UI
             Close();
         }
 
-        private void cancelButton_Click(object sender, RoutedEventArgs e)
+        private void cancel_Click(object sender, RoutedEventArgs e)
         {
             Movie.Name = _oldName;
+            Movie.Description = _oldDescription;
+            Movie.Rating = _oldRating;
+            Movie.Year = _oldYear;
             Close();
         }
+
+       
     }
 }
 
