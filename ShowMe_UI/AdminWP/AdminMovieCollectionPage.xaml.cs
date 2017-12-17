@@ -42,16 +42,15 @@ namespace ShowMe_UI
                 db.MovieRepository.AddMovie(movie);
                 adminMoviesList.ItemsSource = db.MovieRepository.Movies;
 
-
             }
         }
-        //private void Edit(TeamProject_ShowMe.Movie.Movie movie)
-        //{
-        //    using (TeamProject_ShowMe.MediaCenterContext db = new TeamProject_ShowMe.MediaCenterContext())
-        //    {
-        //        db.MovieRepository.UpdateMovie(movie);
-        //    }
-        //}
+        private void Edit(TeamProject_ShowMe.Movie.Movie movie)
+        {
+           using (TeamProject_ShowMe.MediaCenterContext db = new TeamProject_ShowMe.MediaCenterContext())
+           {
+                db.MovieRepository.UpdateMovie(movie);
+           }
+       }
         private void Delete(TeamProject_ShowMe.Movie.Movie movie)
         {
             using (TeamProject_ShowMe.MediaCenterContext db = new TeamProject_ShowMe.MediaCenterContext())
@@ -72,20 +71,12 @@ namespace ShowMe_UI
 
         private void DeleteMovieAdmin_Click(object sender, RoutedEventArgs e)
         {
-            //Delete((TeamProject_ShowMe.Movie.Movie)adminMoviesList.SelectedItem);
-           
-                context.MovieRepository.RemoveMovie((Movie)adminMoviesList.SelectedItem);
-            context.SaveChanges();
-            context.Movies.Load();
-            adminMoviesList.ItemsSource = null;
-            adminMoviesList.ItemsSource = context.Movies.Local.ToBindingList();
-            context.SaveChanges();
-            
+            Delete((TeamProject_ShowMe.Movie.Movie)adminMoviesList.SelectedItem);
         }
 
         private void buttonSaveChangesMovies_Click(object sender, RoutedEventArgs e)
         {
-            //Edit((TeamProject_ShowMe.Movie.Movie)adminMoviesList.SelectedItem);
+          Edit((TeamProject_ShowMe.Movie.Movie)adminMoviesList.SelectedItem);
 
             RefrechList();
         }

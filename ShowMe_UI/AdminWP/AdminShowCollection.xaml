@@ -73,9 +73,9 @@
                 <TextBox x:Name="textboxEditShowGenre" Margin="5" Grid.Row="3" Grid.Column="2" Text="{Binding Path=Genre}" />
 
                 <TextBlock Margin="7,7,7,0" Grid.Row="3">Description</TextBlock>
-                <TextBox Margin="7" Grid.Row="4" Grid.ColumnSpan="3"
+                <TextBox Margin="7" Text="{Binding Path= Description}" Grid.Row="4" Grid.ColumnSpan="3"
                                      VerticalScrollBarVisibility="Visible" TextWrapping="Wrap" 
-                                     Text="{Binding Path=Description}"/>
+                                      />
             </Grid>
         </Grid>
     </Grid>

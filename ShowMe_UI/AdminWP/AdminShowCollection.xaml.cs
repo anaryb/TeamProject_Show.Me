@@ -77,10 +77,14 @@ namespace ShowMe_UI
 
         private void RefrechList()
         {
-            context.Shows.Load();
-            var tab = context.Shows.Local.ToBindingList();
-            adminShowList.ItemsSource = null;
-            adminShowList.ItemsSource = tab;
+            using (var db = new TeamProject_ShowMe.MediaCenterContext())
+            {
+                var tab = db.Movies.Local.ToBindingList();
+                adminShowList.ItemsSource = null;
+                adminShowList.ItemsSource = tab;
+
+            }
+
         }
 
         private void DeleteShowAdmin_Click(object sender, RoutedEventArgs e)
@@ -88,5 +92,7 @@ namespace ShowMe_UI
             Delete((TeamProject_ShowMe.Show.Show)adminShowList.SelectedItem);
             RefrechList();
         }
+
+       
     }
 }
