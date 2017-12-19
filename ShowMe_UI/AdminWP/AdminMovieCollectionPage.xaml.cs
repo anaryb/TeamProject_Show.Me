@@ -85,6 +85,7 @@ namespace ShowMe_UI
         {
             using (var db = new TeamProject_ShowMe.MediaCenterContext())
             {
+                db.Movies.Load();
                 var tab = db.Movies.Local.ToBindingList();
                 adminMoviesList.ItemsSource = null;
                 adminMoviesList.ItemsSource = tab;
